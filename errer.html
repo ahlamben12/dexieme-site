@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stl.css">
+</head>
+<body>
+    <form id="formInscription" novalidate>
+        
+            <label for="nom">nom:</label>
+            <input type="text" id="nom" name="nom" placeholder="entrer votre nom" required minlength="2"><br><br>
+            <div id="erreurNom" class="error"></div>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" placeholder="entrer votre email">
+            <div id="erreurEmail" class="error"></div>
+            <label for="mdp">mot de passe:</label>
+            <input type="password" id="mdp" name="mdp" placeholder="entrer votre mot pass" minlength="6">
+            <div id="erreurmdp" class="error"></div>
+            <label for="confirm">confirmer le mot de passe :</label>
+            <input type="password" id="confirm" name="confirm" required>
+            <div id="erreurconfirm" class="error"></div>
+            <button type="submit">valider</button>
+    </form>
+    <script>
+        document.getElementById("forminscription").addEventListener("submit",function(event) {
+            e.preventDefault();
+            const nom=document.getElementById("nom");
+            const email=document.getElementById("email");
+            const mdp=document.getElementById("mdp");
+            const confirm=document.getElementById("confirm")
+            const erreurNom=document.getElementById("erreurNom");
+            const erreurEmail=document.getElementById("erreuremail");
+        
+        
+            if(mdp.value.length<6){
+                errmdp.textcontent="le mot de passe doit contenir au moins 6 caracteres.";
+                valide=false;
+            }
+        if(mdp.value !==confirm.value){
+            errconfirm.textcontent="les mots de passe ne correspondent pas.";
+            valide=false;
+        }
+        if(valide){
+            alert("formulaire validé avec succés !");
+            this.submit();
+        }
+    })
+    </script>
+</body>
+</html>
